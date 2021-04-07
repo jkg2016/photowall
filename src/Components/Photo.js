@@ -11,7 +11,12 @@ export default function Photo(props) {
           <p>{post.description} </p>
         </figcaption>
         <div className="button-container">
-          <button className="button" onClick={() => props.onRemovePhoto(post)}>
+          <button
+            className="button"
+            onClick={() => {
+              props.removePost(props.index);
+            }}
+          >
             {" "}
             Remove
           </button>
