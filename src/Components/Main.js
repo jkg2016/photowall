@@ -25,9 +25,7 @@ class Main extends Component {
         />
         <Route
           path="/AddPhoto"
-          render={({ history }) => (
-            <AddPhoto {...this.props} onHistory={history} />
-          )}
+          render={({ history }) => <AddPhoto {...this.props} />}
         />
       </div>
     );

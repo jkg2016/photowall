@@ -19,7 +19,7 @@ export default class AddPhoto extends Component {
 
     if (description && imageLink) {
       this.props.addPost(post);
-      this.props.onHistory.push("/");
+      this.props.history.push("/");
     }
   }
 
