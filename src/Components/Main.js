@@ -8,7 +8,13 @@ class Main extends Component {
   constructor() {
     super();
   }
-
+  state = { loading: true };
+  componentDidMount() {
+    this.props.startLoadingPost().then(() => {
+      this.setState({ loading: false });
+    });
+    this.props.startLoadingComments();
+  }
   render() {
     return (
       <div>
@@ -30,7 +36,9 @@ class Main extends Component {
         />
         <Route
           path="/single/:id"
-          render={(params) => <Single {...this.props} {...params} />}
+          render={(params) => (
+            <Single {...this.props} {...params} loading={this.state.loading} />
+          )}
         />
       </div>
     );
